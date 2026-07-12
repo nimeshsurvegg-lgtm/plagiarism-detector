@@ -1,2 +1,0 @@
-Since you are studying computer engineering, you will want to see exact file extensions all the time to prevent bugs like this.
-Table Formatting (System.out.printf): The % symbols inside the print statements act as formatting anchors. %-20s means "reserve exactly 20 spaces for this string and align it to the left." This guarantees the vertical lines of your table stay perfectly straight regardless of how long the filenames are.
