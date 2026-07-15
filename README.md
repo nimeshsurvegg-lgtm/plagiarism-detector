@@ -1,30 +1,48 @@
-# 🕵️‍♂️ Plagiarism Detector Pro (Java Swing)
+<div align="center">
+  <h1>🕵️‍♂️ Plagiarism Detector Pro</h1>
+  <h3><em>A high-performance, multithreaded desktop application for document similarity analysis</em></h3>
+</div>
 
-A robust, multithreaded desktop application built in pure Java that detects text similarity and potential plagiarism across multiple documents. 
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-11%2B-blue.svg" alt="Java Version">
+  <img src="https://img.shields.io/badge/GUI-Swing-orange.svg" alt="Java Swing">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+</p>
 
-This project was developed to demonstrate core computer engineering concepts, including algorithmic dynamic programming, multithreading for performance optimization, and graphical user interface (GUI) development.
+> **Overview:** Plagiarism Detector Pro is a standalone Java desktop application that compares large batches of text documents to detect similarities and potential plagiarism. It utilizes the Longest Common Subsequence (LCS) algorithm paired with a multithreaded architecture to process up to 63 files simultaneously without freezing the user interface.
 
-## ✨ Key Features
+---
 
-* **Graphical User Interface (GUI):** A clean, responsive dashboard built with Java Swing.
-* **Bulk Folder Scanning:** Automatically reads and parses up to 63 `.txt` files from a selected local directory.
-* **Advanced Math Engine:** Utilizes the **Longest Common Subsequence (LCS)** algorithm via dynamic programming to accurately compare word structures and sequences, ignoring basic punctuation changes.
-* **Stop-Word Filtering:** Includes a toggleable feature to filter out common English words (the, and, is, etc.) to prevent artificially inflated similarity scores.
-* **Multithreaded Performance:** Leverages Java's `ExecutorService` to run heavy matrix calculations in the background, keeping the UI completely responsive.
-* **CSV Export:** Generates downloadable Excel-ready `.csv` reports of the analysis.
-* **Secure Login Module:** Includes a simulated authentication gateway for system access.
+## 📖 Table of Contents
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Installation & Usage](#-installation--usage)
+- [System Access (Default Credentials)](#-system-access)
+- [Technical Architecture](#-technical-architecture)
 
-## ⚙️ The Algorithm (LCS)
-Instead of comparing documents character-by-character, this engine tokenizes documents into word arrays. It builds an `(M+1) x (N+1)` matrix to find the longest continuous sequence of words that appear in the exact same order in both documents. 
-* *Time Complexity:* `O(M * N)` per document pair.
-* *Similarity Score:* Calculated as `(LCS Length / Max Document Word Count) * 100`.
+---
 
-## 🚀 How to Run Locally
+## 🚀 Features
 
-### Prerequisites
-* Java Development Kit (JDK) 8 or higher installed on your machine.
+* **Advanced Similarity Algorithm:** Uses Longest Common Subsequence (LCS) dynamic programming to compare document token arrays.
+* **Multithreaded Processing:** Utilizes `ExecutorService` and `SwingWorker` to utilize all available CPU cores, ensuring the GUI remains highly responsive during heavy mathematical calculations.
+* **Intelligent Text Parsing:** Automatically strips punctuation, normalizes cases, and features an optional **Stop Word Filter** to remove common syntax (e.g., "the", "and", "is") and increase accuracy.
+* **Dual-View Dashboard:** View all comparisons in one table, or quickly pivot to the "Action Required" tab to see only documents with a >= 60% similarity match.
+* **CSV Reporting:** One-click export of all analysis results to a `.csv` file for external auditing and record-keeping.
 
-### Installation
-1. Clone this repository to your local machine:
+---
+
+## ⚙️ Prerequisites
+
+To run this project, you need:
+* **Java Development Kit (JDK) 11 or higher** (Required for `Files.readString` API).
+
+---
+
+## 💻 Installation & Usage
+
+1. Clone this repository to your local machine.
+2. Open your terminal and navigate to the directory containing the source code.
+3. Compile the application:
    ```bash
-   git clone [https://github.com/YOUR-USERNAME/plagiarism-detector.git](https://github.com/YOUR-USERNAME/plagiarism-detector.git)
+   javac PlagiarismDetectorGUI.java
