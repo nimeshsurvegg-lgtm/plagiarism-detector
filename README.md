@@ -17,7 +17,7 @@
 - [Features](#-features)
 - [Prerequisites](#-prerequisites)
 - [Installation & Usage](#-installation--usage)
-- [System Access](#-system-access)
+- [System Access](#-system-login)
 - [Technical Architecture](#-technical-architecture)
 - [License](#-license)
 
@@ -68,7 +68,9 @@ Password: password123
 ## 🧠 Technical Architecture
 
 UI Framework: Java Swing (JFrame, JTable, JTabbedPane)
+
 Concurrency: java.util.concurrent.ExecutorService, javax.swing.SwingWorker
+
 File I/O: java.nio.file.Files, java.io.FileWriter
 
 ---
